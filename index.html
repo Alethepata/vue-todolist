@@ -29,23 +29,18 @@
 
             <ul class="list-unstyled">
 
-                <li class="border-bottom ">
+                <li 
+                class="border-bottom "
+                v-for="task in tasks"
+                >
 
-                    <span class="align-middle">Comprare la pappa di Artù</span>
-                    <span class="cross">&Cross;</span>
-
-                </li>
-
-                <li class="border-bottom">
-
-                    <span class="align-middle">Pagare la bolletta</span>
-                    <span class="cross">&Cross;</span>
-
-                </li>
-
-                <li class="border-bottom">
-
-                    <span class="align-middle">Ripassare Vue</span>
+                    <span 
+                    class="align-middle" 
+                    :class="{'text-decoration-line-through' : task.isDone}"
+                    >
+                    {{task.task}}
+                    </span>
+                    
                     <span class="cross">&Cross;</span>
 
                 </li>
