@@ -1,3 +1,13 @@
 img{
     width: 250px;
 }
+
+li{
+    padding: 25px;
+}
+
+.cross{
+    float: right;
+    vertical-align: middle;
+    font-size: 20px;
+}
