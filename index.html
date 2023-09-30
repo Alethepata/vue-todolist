@@ -20,8 +20,18 @@
 
         <div class="new-task text-center mt-5 mb-4 ">
 
-            <input type="text" class="w-25 ps-3 py-1 rounded-3 me-3 " placeholder="New Task">
-            <button class="px-3 py-1 rounded-3">Aggiungi</button>
+            <input 
+            v-model="newTasks.task"
+            @keyup.enter="addTasks"
+            type="text" 
+            class="w-25 ps-3 py-1 rounded-3 me-3 " 
+            placeholder="New Task"
+            >
+            <button 
+            @click="addTasks"
+            class="px-3 py-1 rounded-3"
+            >Aggiungi
+            </button>
 
         </div>   
         
@@ -35,13 +45,19 @@
                 >
 
                     <span 
-                    class="align-middle" 
+                    class="align-middle cursor"
+                    @click="done(task)" 
                     :class="{'text-decoration-line-through' : task.isDone}"
                     >
                     {{task.task}}
                     </span>
                     
-                    <span class="cross">&Cross;</span>
+                    <span 
+                    class="cross cursor" 
+                    @click="removeTask(index)"
+                    >
+                    &Cross;
+                    </span>
 
                 </li>
 
