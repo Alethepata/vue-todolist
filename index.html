@@ -21,7 +21,7 @@
         <div class="new-task text-center mt-5 mb-4 ">
 
             <input 
-            v-model="newTasks.task"
+            v-model="newTasks"
             @keyup.enter="addTasks"
             type="text" 
             class="w-25 ps-3 py-1 rounded-3 me-3 " 
@@ -47,7 +47,7 @@
                     <span 
                     class="align-middle cursor"
                     @click="done(task)" 
-                    :class="{'text-decoration-line-through' : task.isDone}"
+                    :class="[{'text-decoration-line-through' : task.isDone},{'text-success ' : task.isDone}]"
                     >
                     {{task.task}}
                     </span>
