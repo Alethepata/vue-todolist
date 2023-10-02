@@ -18,17 +18,18 @@ createApp({
                     isDone:false
                 }
             ],
-            newTasks:
-                {
-                    task:'',
-                    isDone: false
-                }
+            newTasks:''
             
         }
     },
     methods:{
         addTasks(){
-            this.tasks.unshift(this.newTasks);
+            const newTask = {
+                task: this.newTasks,
+                isDone: false
+            }
+            this.tasks.unshift(newTask);
+            this.newTasks='';
             
         },
         removeTask(index){
